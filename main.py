@@ -65,6 +65,7 @@ def check_mission_completed():
             if mission.quest_giver.favour_completed and mission.completed == False:
                 print_gui(f"{mission.title} - mission successful.")
                 mission.completed = True
+                print_gui(f"~You can talk to the quest giver to claim the reward.~")
             elif mission.quest_giver.favour_failed:
                 print_gui(f"{mission.title} - mission failed")
         #game_rooms.active_missions.remove(mission)
@@ -337,7 +338,9 @@ def fight_enemy(character):
             char.is_alive=False
             set_context(None)
             check_mission_completed()
-            if char.proffession != 'bandit' or char.type != 'monster':
+            if char.proffession == "bandit" or char.type == "monster":
+                pass
+            else:
                 set_other_npc_aggr(char)
                 game_items.negative_karma += 5
                 print_gui(game_items.darkness_progress(game_items.negative_karma))
@@ -402,7 +405,9 @@ def shoot_character(character):
                 set_context(None)
                 check_mission_completed()
                 set_other_npc_aggr(char)
-                if char.proffession != 'bandit':
+                if char.proffession == 'bandit' or char.type == "monster":
+                    pass
+                else:
                     game_items.negative_karma += 5
                     print_gui(game_items.darkness_progress(game_items.negative_karma))
                     check_dark_lodge_visit(game_items.negative_karma)
@@ -763,6 +768,7 @@ def dialog_character(character):
                 print_gui(f"{char.name}>> Thank you so much for helping me, stranger. I'm in your debt.\n"+random.choice(["Here is the reward I promised you.", "Take this, you earned it", "You've earned every single one of these."]))
                 char.aggression = char.aggression - 10
                 game_items.floren_balance = game_items.floren_balance + char.mission.reward
+                print_gui(f"~{char.mission.reward} florens were added to your inventory~\n")
             #--------MANAGE DIALOGUE WITH MAIN CHARACTERS-------------
             if char.proffession != "bandit":
                 #prologue dialogue selector
@@ -818,7 +824,7 @@ def dialog_character(character):
                         dialog.open_dialog_window(char, "talk")
                         if char.proffession == "merchant" or char.proffession == "innkeep" or char.proffession == "blacksmith":
                             dialog.dialog_window.wait_window()
-                            print_gui(f"{char.name}>>" +random.choice(["Here is what I have in store, traveler.", "Here, take a look at my goods, stranger.", "Please look what I have for you."]))
+                            print_gui(f"{char.name}>>" +random.choice(["One more thing. Here is what I have in store, traveler.", "Before you go, take a look at my goods, stranger.", "Please look what I have for you before you leave."]))
                             set_context("merchant")
                             print_gui(f"The {char.proffession} leans behind {char.gen_pronouns} counter and brings before you {char.gen_pronouns} goods")
                             for item in char.items:
@@ -1160,13 +1166,13 @@ game_items.inventory.add(game_items.gungnir_spear)
 game_items.inventory.add(game_items.apple)
 game_items.inventory.add(game_items.crossbow)
 #print_gui("Welcome to "+ game_rooms.current_room.super_area_title)
-# dummy_monster = characters.generate_monster("vampire")
-# dummy_bandit = characters.generate_enemy_npc()
-# game_rooms.rooms_obj[4][8].characters.add(dummy_bandit)
+#dummy_monster = characters.generate_monster("vampire")
+dummy_bandit = characters.generate_enemy_npc()
+game_rooms.rooms_obj[4][8].characters.add(dummy_bandit)
 game_rooms.rooms_obj[6][43].characters.add(characters.audafir)
 # print(dummy_bandit.intelligence)
 # print(dummy_monster)
-# game_rooms.rooms_obj[4][10].characters.add(dummy_monster)
+#game_rooms.rooms_obj[4][10].characters.add(dummy_monster)
 # dummy_monster2 = characters.generate_monster("vampire")
 # game_rooms.rooms_obj[4][11].characters.add(dummy_monster2)
 game_rooms.active_missions.append(main_missions.prologue)
