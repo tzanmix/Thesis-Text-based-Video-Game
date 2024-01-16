@@ -1,0 +1,98 @@
+{
+    "text": "Murderer! What do you think you're doing?",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "Liar! I have not laid a hand on you",
+            "speaker": "Player",
+            "choices": {}
+        },
+        "option2": {
+            "text": "Stand still so that I won't miss again",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "Why would you try to kill me? I have not wronged anyone in my life, I just do some honest work to provide for my family",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2aa": {
+                            "text": "I don't know, I just love killin'",
+                            "speaker": "Player",
+                            "choices": {}                  
+                        },
+                        "option2ab": {
+                            "text": "I made a mistake, please we can sort this out",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2ac": {
+                            "text": "I just want to steal everything you have",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                },
+                "option2b": {
+                    "text": "Who made you do this? We can talk this out, please don't kill me",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2ba": {
+                            "text": "No one hired me, I just wanted to kill someone, it's not personal",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2bb": {
+                            "text": "Ok I made a mistake, I'm sorry, just stop crying",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                },
+                "option2c": {
+                    "text": "Do you enjoy killing innocent people?",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2ca": {
+                            "text": "Yes",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2cb": {
+                            "text": "No, but I'm in a really tough financial situation",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2cc": {
+                            "text": "I didn't like the way you looked at me",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option3": {
+            "text": "*POINT AT SOMEONE ELSE* Yes! You right there! You think you can try to kill this poor man and nobody will see you?",
+            "speaker": "Player",
+            "choices": {
+                "option3a": {
+                    "text": "No no no, you can't talk your way ot of this",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option3aa": {
+                            "text": "I have no idea what you're talking about",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option3ab": {
+                            "text": "Ok, I tried to kill you, I'm sorry, I made a mistake",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

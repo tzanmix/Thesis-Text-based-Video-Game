@@ -1,0 +1,171 @@
+{
+    "text": "Hey, what do you think you're doing there?",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "I'm robbing you",
+            "speaker": "Player",
+            "choices": {}
+        },
+        "option2": {
+            "text": "*BOO*I'm a fragment of your imagination",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "Huh? What are you talking about?",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2aa": {
+                            "text": "Nothing to see here, I'm not real",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2ab": {
+                            "text": "You're imagining that I'm robbing you",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2ac": {
+                            "text": "Nothing, I can't believe this didn't work",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                },
+                "option2b": {
+                    "text": "Are you insane? Do you think I'm insane?",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2ba": {
+                            "text": "Yes",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2bb": {
+                            "text": "Yeeeeah?",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2bc": {
+                            "text": "No...?",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option3": {
+            "text": "Nothing to see here, I'm just minding my own business",
+            "speaker": "Player",
+            "choices": {
+                "option3a": {
+                    "text": "Do you honestly believe I'm that stupid?",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option3aa": {
+                            "text": "Yes",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option3ab": {
+                            "text": "Yeeeeah?",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option3ac": {
+                            "text": "No...?",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                },
+                "option3b": {
+                    "text": "I just saw you stretching your arm, trying to rob me",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option3ba": {
+                            "text": "No you didn't",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3baa": {
+                                    "text": "Yes I did",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3baaa": {
+                                            "text": "No you didn't",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3baaaa": {
+                                                    "text": "Yes I did",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa": {
+                                                            "text": "Yes you did",
+                                                            "speaker": "Player",
+                                                            "choices": {
+                                                                    "option3baaaaaa": {
+                                                                    "text": "No I didn't, wait....",
+                                                                    "speaker": "NPC",
+                                                                    "choices": {
+                                                                        "option3baaaaaaa": {
+                                                                            "text": "Aha!",
+                                                                            "speaker": "Player",
+                                                                            "choices": {}
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option3bb": {
+                            "text": "You're lying, I'm just an honest traveller, trying to make some coin with honest work",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3bba": {
+                                    "text": "I'm sick of you foreigners, coming here and stealing everything we've worked so hard for",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3bbaa": {
+                                            "text": "That's not really nice to say, you know",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                },
+                                "option3bbb": {
+                                    "text": "You can't get away with words stranger, I know what you did",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3bbba": {
+                                            "text": "*SHOUT TO EVERYONE* This man here is a liar!",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        },
+                                        "option3bbbb": {
+                                            "text": "You don't have proof, nothing is missing from you, so nobody is gonna believe you",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option4": {
+            "text": "What do YOU think you're doing here?",
+            "speaker": "Player",
+            "choices": {}
+        }
+    }
+}

@@ -1,0 +1,134 @@
+{
+    "text": "Greetings traveller! How can I help you?",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "Who are you?",
+            "speaker": "Player",
+            "choices": {
+                "option1a": {
+                    "text": "I'm Ygritte Fenn, the owner of the agency",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option1aa": {
+                            "text": "What is this agency?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1aaa": {
+                                    "text": "I have some spies scattered all over the world, and all the information is gathered here.",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option1aaaa": {
+                                            "text": "I see",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option2": {
+            "text": "Do you know of any red haired sorcerers?",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "I might have heard something about this, but for 100 florens I might investigate more.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2aa": {
+                            "text": "What? I have to pay you?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option2aaa": {
+                                    "text": "Of course, I have a large web of spies, how am I supposed to keep the business running?",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option2aaaa": {
+                                            "text": "I see...",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option2ab": {
+                            "text": "Fine, I'll pay you",
+                            "speaker": "Player",
+                            "choices": {
+                                "option2aba": {
+                                    "text": "Thanks for that. So I see a recent bounty with a massive reward on this sorcerer you seek.\nHis last known whereabouts were in a tower south of Hawara.",
+                                    "speaker": "NPC",
+                                    "condition": "floren_balance>100",
+                                    "choices": {
+                                        "option2abaa": {
+                                            "text": "Alright, thank you.",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                },
+                                "option2abb": {
+                                    "text": "You're short of coin, stranger, come back to me when you've enough.",
+                                    "speaker": "NPC",
+                                    "condition": "floren_balance<100",
+                                    "choices": {
+                                        "option2abba": {
+                                            "text": "Grmph, fine",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option3": {
+            "text": "What exactly do you do here?",
+            "speaker": "Player",
+            "choices": {
+                "option3a": {
+                    "text": "I run a large network of spies that covers the whole world.\nAll the information they gather comes to me, and I sell it to whoever pays a certain price.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option3aa": {
+                            "text": "So you are a spy more than a detective",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option4": {
+            "text": "I should go",
+            "speaker": "Player",
+            "choices": {
+                "option4a": {
+                    "text": "Watch out traveller, you're looking for a very dangerous person",
+                    "speaker": "NPC",
+                    "end": "true",
+                    "choices": {
+                        "option4aa": {
+                            "text": "Thank you, goodbye",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option4ab": {
+                            "text": "I'm also a dangerous person",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

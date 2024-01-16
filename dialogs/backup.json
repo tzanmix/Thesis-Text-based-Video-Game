@@ -1,0 +1,14 @@
+{
+    "option1caaa": {
+    "text": "quest_reward_bargain",
+    "speaker": "Player",
+    "choices": {
+        "option1caaaa": {
+            "text": "refuse_bargain",
+            "speaker": "NPC",
+            "choices": {
+                }
+            }
+        }
+    }
+}

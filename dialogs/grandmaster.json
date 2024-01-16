@@ -1,0 +1,300 @@
+{
+    "text": "Finally, you're back!",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "Do I know you?",
+            "speaker": "Player",
+            "choices": {
+                "option1a": {
+                    "text": "Oh, I see, he did a real number on you, didn't he?\nTell me you remember if you got the job done.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option1aa": {
+                            "text": "Who did what? What are you talking about?",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option1ab": {
+                            "text": "The job done? What job?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1aba": {
+                                    "text": "I hired you some moons ago to hunt down and bring here a former apprentice of mine.\nHis name is Mulfeilf Deim and after he graduated, he started practicing the Dark Arts.\nMy spies told me that he found refuge in the desert, where with his dark magic he tried to bring back the Harbinger.",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option1abaa": {
+                                            "text": "The Harbinger?",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option1abaaa": {
+                                                    "text": "A mythical figure, present in most ancient mythologies of this world.\nYou might have heard of him as the Dark Lord or other names.\nSupposedly, he was defeated and exiled in the Black Lodge by the Allfather with this spear I gave you.",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option1abaaaa": {
+                                                            "text": "I see",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option1abab": {
+                                            "text": "The Dark Arts?",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option1ababa": {
+                                                    "text": "Some techniques and spells are forever forbidden from our society.\nBlack magic is very dangerous and we hunt down all the wielders of it.",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option1abababa": {
+                                                            "text": "I see",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option2": {
+            "text": "Who are you?",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "You don't remember me? I am Nesin Nauthuy, the grandmaster of the Citadel.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2aa": {
+                            "text": "How did we meet?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option2aaa": {
+                                    "text": "So you truly don't remember.\nI hired you some moons ago to hunt down and kill a rogue mage.",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option2aaaa": {
+                                            "text": "Tell me the man I was looking for is red haired and has a scar",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option2aaaaa": {
+                                                    "text": "Yes, this sorcerer is a former apprentice of mine,\nwho later started practicing the Dark Arts.\nThe fact that you don't remember anything means he propably escaped",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option2aaaaaa": {
+                                                            "text": "The Dark Arts? Is he dangerous?",
+                                                            "speaker": "Player",
+                                                            "choices": {
+                                                                "option2aaaaaaa": {
+                                                                    "text": "I have no words to describe you how important it is that this man is dead.\nThe fate of the whole society of sorcerers depends on it.",
+                                                                    "speaker": "NPC",
+                                                                    "choices": {
+                                                                        "option2aaaaaaaa": {
+                                                                            "text": "OK, I get it",
+                                                                            "speaker":"Player",
+                                                                            "choices": {}
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "option2aaaaab": {
+                                                        "text": "He escaped? Where could he be?",
+                                                        "speaker": "Player",
+                                                        "choices": {
+                                                            "option2aaaaaba": {
+                                                                "text": "I do not know, last time I sent you to the tower in the desert.\nThere are many places where he could hide, I'll give you a list of his hideouts.",
+                                                                "speaker": "NPC",
+                                                                "choices": {
+                                                                    "option2aaaaabaa": {
+                                                                        "text": "Alright, I'll check them out",
+                                                                        "speaker": "Player",
+                                                                        "choices": {}
+                                                                    },
+                                                                    "option2aaaaabab": {
+                                                                        "text": "Why don't you look for him yourself?",
+                                                                        "speaker": "Player",
+                                                                        "choices": {
+                                                                            "option2aaaaabaaa": {
+                                                                                "text": "I am a prominent citizen of the Capital.\nMy reputation would be tarnished if it was known that a former student of mine started practicing black magic",
+                                                                                "speaker": "NPC",
+                                                                                "choices": {
+                                                                                    "option2aaaaabaaaa": {
+                                                                                        "text": "Alright, I get it",
+                                                                                        "speaker": "Player",
+                                                                                        "choices": {}
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option3": {
+            "text": "Is this yours?",
+            "speaker": "Player",
+            "choices": {
+                "option3a": {
+                    "text": "Ah yes, you found my old textbook I used to give to every student,\nyou can keep it, you can learn a lot of spells by this",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option3aa": {
+                            "text": "Thank you",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option4": {
+            "text": "What is this rot in my hand and how can I get rid of it?",
+            "speaker": "Player",
+            "choices": {
+                "option4a": {
+                    "text": "Look at my hand, I also have this.\nIt has grown and reached my elbow within a week.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option4aa": {
+                            "text": "How did you get it?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option4aaa": {
+                                    "text": "The same way you did, the rogue sorcerer cursed us.",
+                                    "speaker": "NPC",
+                                    "choices": {}
+                                }
+                            }
+                        },
+                        "option4ab": {
+                            "text": "How can we get rid of it?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option4aba": {
+                                    "text": "I do not know, we should find the words of the curse for that.\nAnd only the man who cursed us would know them, so that's why you must find him soon",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option4abaa": {
+                                            "text": "Alright I get it",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option5": {
+            "text": "Did you give me this spear?",
+            "speaker": "Player",
+            "choices": {
+                "option5a": {
+                    "text": "Yes, this is a very powerful spear called Gungnir.\nLegends say it belonged to the Allfather himself, and it was used in the battle against evil.\nOnce you throw it or you lose it, by a snap of your fingers, the spear comes back to you.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option5aa": {
+                            "text": "It sounds too important, why did you give it to me?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option5aaa": {
+                                    "text": "You needed all the help you can get in your fight against Mulfeilf.\nHe is a very powerful sorcerer so I gave you this magical spear that cannot be disarmed",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option5aaaa": {
+                                            "text": "And I thank you for that",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option5ab": {
+                            "text": "What about this teleportation scepter?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option5aba": {
+                                    "text": "Ah you found it. This used to be an exhibit here in the Citadel before Mulfeilf stole it.\nIt seems you stole it back, keep it, you will need that too.",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option5abaa": {
+                                            "text": "Thank you for letting me keep it",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option5ac": {
+                            "text": "So it is a really important item",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option6": {
+            "text": "Where will I find the rogue mage?",
+            "speaker": "Player",
+            "choices": {
+                "option6a": {
+                    "text": "I have a list of his last known hideouts, you should check these out.\nDon't forget, this time, we need him alive to break the curse",
+                    "speaker": "NPC",
+                    "end": "true",
+                    "choices": {
+                        "option6aa": {
+                            "text": "Alright, I'll start there, I should go",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option7": {
+            "text": "I should go.",
+            "speaker": "Player",
+            "choices": {
+                "option7a": {
+                    "text": "Be careful, he will resist.\nWhatever happens, we both need him alive to break the curse.",
+                    "speaker": "NPC",
+                    "end": "true",
+                    "choices": {
+                        "option7aa": {
+                            "text": "Goodbye",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

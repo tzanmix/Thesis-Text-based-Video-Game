@@ -1,0 +1,281 @@
+{
+    "text": "You look very rough traveller, you are in great danger.",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "Why is that?",
+            "speaker": "Player",
+            "choices": {
+                "option1a": {
+                    "text": "This rot on your hand, I haven't seen anything like this in over a century.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option1aa": {
+                            "text": "Is it bad?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option5aaa": {
+                                    "text": "A curse has been placed upon you, by a powerful black magic user\nThe darkness will feed on you and grow unless the sorcerer who cursed you decides to unbind the curse",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option5aaa": {
+                                            "text": "Wait, feed on me? I can... die from this?",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option5aaaa": {
+                                                    "text": "Yes, once the darkness reaches your heart, you will be fully consumed and you will be trapped in the Black Lodge.\nThe darkness will grow unless you do good deeds.\nYou will die faster if you live a life of sin, murder and theft",
+                                                    "speaker":"NPC",
+                                                    "choices": {
+                                                        "option5aaaaa": {
+                                                            "text": "The heart? Speak clearly and not in riddles old man!",
+                                                            "speaker": "Player",
+                                                            "choices": {
+                                                                "option5aaaaaa": {
+                                                                    "text": "I mean it literally you fool! Once this goo reaches your chest, you die",
+                                                                    "speaker": "NPC",
+                                                                    "choices": {
+                                                                        "option5aaaaaaa": {
+                                                                            "text": "That's not good",
+                                                                            "speaker": "Player",
+                                                                            "choices": {}
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "option5aaaaab": {
+                                                            "text": "This is very bad, what am I supposed to do?",
+                                                            "speaker": "Player",
+                                                            "choices": {
+                                                                "option5aaaaaaaa": {
+                                                                    "text": "FInd more about the curse, no sorcerer will be able to break it without knowing it.\nOr find the sorcerer that cursed you, and make him break it.",
+                                                                    "speaker": "NPC",
+                                                                    "choices": {
+                                                                        "option5aaaaaaaaaaaaaaa": {
+                                                                            "text": "Ok",
+                                                                            "speaker": "Player",
+                                                                            "choices": {}
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option5aab": {
+                                            "text": "Where can I find the sorcerer that cursed me?",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option5aaba": {
+                                                    "text": "I'm afraid only you have the answer to that, and you don't remember it yet",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option5aabaa": {
+                                                            "text": "That was not very helpful",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option2": {
+            "text": "Who are you?",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "My name is Audafir Nemburul, I am a sorcerer, and you are a guest of the House of the Undying",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2aa": {
+                            "text": "Me, I am just a traveller",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option2ab": {
+                            "text": "I am a mercenary",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option3": {
+            "text": "Where am I?",
+            "speaker": "Player",
+            "choices": {
+                "option3a": {
+                    "text": "This is the House of the Undying, don't mind the name, feel free to make yourself at home",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option3aa": {
+                            "text": "House of the Undying, that's a little creepy indeed",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option3ab": {
+                            "text": "I thank you for your hospitality kind man",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option5": {
+            "text": "How can I wash away this rot from my hand?",
+            "speaker": "Player",
+            "choices": {
+                "option5a": {
+                    "text": "The darkness has consumed you traveller, simple water cannot wash the darkness",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option5aa": {
+                            "text": "The darkness?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option5aaa": {
+                                    "text": "A curse has been placed upon you, by a powerful black magic user\nThe darkness will feed on you and grow unless the sorcerer who cursed you decides to unbind the curse",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option5aaa": {
+                                            "text": "Wait, feed on me? I can... die from this?",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option5aaaa": {
+                                                    "text": "Yes, once the darkness reaches your heart, you will be fully consumed and you will be trapped in the Black Lodge.\nThe darkness will grow unless you do good deeds.\nYou will die faster if you live a life of sin, murder and stealing",
+                                                    "speaker":"NPC",
+                                                    "choices": {
+                                                        "option5aaaaa": {
+                                                            "text": "The heart? Speak clearly and not in riddles old man!",
+                                                            "speaker": "Player",
+                                                            "choices": {
+                                                                "option5aaaaaa": {
+                                                                    "text": "I mean it literally you fool! Once this rot reaches your chest, you die",
+                                                                    "speaker": "NPC",
+                                                                    "choices": {
+                                                                        "option5aaaaaaa": {
+                                                                            "text": "That's not good",
+                                                                            "speaker": "Player",
+                                                                            "choices": {}
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "option5aaaaab": {
+                                                            "text": "This is very bad, what am I supposed to do?",
+                                                            "speaker": "Player",
+                                                            "choices": {
+                                                                "option5aaaaaaaa": {
+                                                                    "text": "FInd more about the curse, no sorcerer will be able to break it without knowing it.\nOr find the sorcerer that cursed you, and make him break it.",
+                                                                    "speaker": "NPC",
+                                                                    "choices": {
+                                                                        "option5aaaaaaaaaaaaaaa": {
+                                                                            "text": "Ok",
+                                                                            "speaker": "Player",
+                                                                            "choices": {}
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option5aab": {
+                                            "text": "Where can I find the sorcerer that cursed me?",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option5aaba": {
+                                                    "text": "I'm afraid only you have the answer to that, and you don't remember it yet",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option5aabaa": {
+                                                            "text": "That was not very helpful",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option5ab": {
+                            "text": "Then what can I do?",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option6": {
+            "text": "I don't remember anything from the past days, can you help me?",
+            "speaker": "Player",
+            "choices": {
+                "option6a": {
+                    "text": "Don't worry, you seem to have some short term memory loss,\ngive it some time and you will start remembering.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option6aa": {
+                            "text": "That's great!",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option6ab": {
+                            "text": "That is kinda creepy, can't you just cast a spell or give me a potion of rememberance or something?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option6aba": {
+                                    "text": "*LAUGHS* You call this creepy, yet you ask a man you do not know and trust to cast a spell on you?",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option6abaa": {
+                                            "text": "Good point",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option7": {
+            "text": "end_conv",
+            "speaker": "Player",
+            "choices": {
+                "option5a": {
+                    "text": "Goodbye traveller",
+                    "speaker": "NPC",
+                    "end": "true",
+                    "choices": {
+                        "option5aa": {
+                            "text": "Goodbye",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

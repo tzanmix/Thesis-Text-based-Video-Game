@@ -1,0 +1,119 @@
+{
+    "text": "bandit_intro",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "intimidate",
+            "speaker": "Player",
+            "choices": {
+                "option1a": {
+                    "text": "intimidate_success",
+                    "speaker": "NPC",
+                    "condition": "intelligence<10",
+                    "success": "true",
+                    "choices": {
+                        "option1aa": {
+                            "text": "intimidate_success_ans",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                },
+                "option1b": {
+                    "text": "intimidate_fail_critical",
+                    "speaker": "NPC",
+                    "condition": "intelligence>15",
+                    "success": "false_critical",
+                    "choices": {
+                        "option1ba": {
+                            "text": "intimidate_fail_critical_ans",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                },
+                "option1c": {
+                    "text": "intimidate_fail",
+                    "speaker": "NPC",
+                    "condition": "intelligence>=10",
+                    "success": "false_critical",
+                    "choices": {
+                        "option1ca": {
+                            "text": "intimidate_fail_ans",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option2": {
+            "text": "mercy",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "mercy_success",
+                    "speaker": "NPC",
+                    "condition": "aggr<10",
+                    "success": "true",
+                    "choices": {
+                        "option2aa": {
+                            "text": "mercy_success_ans",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                },
+                "option2b": {
+                    "text": "mercy_fail",
+                    "speaker": "NPC",
+                    "condition": "aggr>=10",
+                    "success": "false",
+                    "choices": {
+                        "option2ba": {
+                            "text": "mercy_fail_ans",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option3": {
+            "text": "accept",
+            "speaker": "Player",
+            "choices": {
+                "option3a": {
+                    "text": "accept_ans",
+                    "speaker": "NPC",
+                    "success": "false",
+                    "choices": {
+                        "option3aa": {
+                            "text": "Alright",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option4": {
+            "text": "refuse",
+            "speaker": "Player",
+            "choices": {
+                "option4a": {
+                    "text": "refuse_ans",
+                    "speaker": "NPC",
+                    "success": "false_critical",
+                    "choices": {
+                        "option4aa": {
+                            "text": "Oh crap",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

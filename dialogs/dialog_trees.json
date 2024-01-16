@@ -1,0 +1,715 @@
+{
+    "text": "npc_intro_q",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "ask_for_quest",
+            "speaker": "Player",
+            "choices": {
+                "option1a": {
+                    "text": "give_quest",
+                    "speaker": "NPC",
+                    "condition": "!mission_accepted&!mission_refused",
+                    "choices": {
+                        "option1b": {
+                            "text": "accept_quest",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1ba": {
+                                    "text": "accept_quest_npc",
+                                    "speaker": "NPC",
+                                    "accept_mission": "true",
+                                    "choices": {
+                                        "option1baa": {
+                                            "text": "I should be going",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option1c": {
+                            "text": "decline_quest",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1ca": {
+                                    "text": "decline_quest_npc",
+                                    "speaker": "NPC",
+                                    "accept_mission": "false",
+                                    "choices": {
+                                        "option1caa": {
+                                            "text": "I should be going",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option1d": {
+                            "text": "insult_npc",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1da": {
+                                    "text": "insult_npc_ans",
+                                    "speaker": "NPC",
+                                    "insult": "true",
+                                    "accept_mission": "false",
+                                    "end": "true",
+                                    "choices": {
+                                        "option1daa": {
+                                            "text": "insult_back",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "option1b": {
+                    "text": "refused_quest",
+                    "condition": "mission_refused",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option1ba": {
+                            "text": "ask_quest_again",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1baa": {
+                                    "text": "give_quest",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option1baaa": {
+                                            "text": "accept_quest",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option1baaaa": {
+                                                    "text": "accept_quest_npc",
+                                                    "speaker": "NPC",
+                                                    "accept_mission": "true",
+                                                    "choices": {
+                                                        "option1baa": {
+                                                            "text": "I should be going",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option1baab": {
+                                            "text": "decline_again",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option1baaba": {
+                                                    "text": "decline_again_ans",
+                                                    "speaker": "NPC",
+                                                    "insult": "true",
+                                                    "end": "true",
+                                                    "choices": {
+                                                        "option1baabaa": {
+                                                            "text": "insult_back",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option1bb": {
+                            "text": "decline_quest",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1ca": {
+                                    "text": "decline_quest_npc",
+                                    "speaker": "NPC",
+                                    "accept_mission": "false",
+                                    "choices": {
+                                        "option1caa": {
+                                            "text": "I should be going",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option1bc": {
+                            "text": "insult_npc",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1da": {
+                                    "text": "insult_npc_ans",
+                                    "speaker": "NPC",
+                                    "insult": "true",
+                                    "accept_mission": "false",
+                                    "end": "true",
+                                    "choices": {
+                                        "option1daa": {
+                                            "text": "insult_back",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "option1c": {
+                    "text": "quest given",
+                    "condition": "mission_accepted",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option1ca": {
+                            "text": "ask_quest_location",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1caa": {
+                                    "text": "quest_location_ans",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option1caaa": {
+                                            "text": "Alright, thank you.",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option1cb": {
+                            "text": "ask_quest_objective",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1caa": {
+                                    "text": "quest_objective_ans",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option1caaa": {
+                                            "text": "Alright, thank you.",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option1cc": {
+                            "text": "ask_quest_reward",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1caa": {
+                                    "text": "quest_reward_ans",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        
+                                        "option1caab": {
+                                            "text": "That sounds good, thank you.",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "option1d": {
+                    "text": "quest_completed",
+                    "speaker": "NPC",
+                    "condition": "quest_completed",
+                    "choices": {
+                        "option1da": {
+                            "text": "quest_completed_ans",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option2": {
+            "text": "ask_info",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "info_positive",
+                    "speaker": "NPC",
+                    "condition": "aggr<=12",
+                    "choices": {
+                        "option3ba": {
+                            "text": "info_question1",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3baa": {
+                                    "text": "info_answer1",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3baaa": {
+                                            "text": "info_people_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "info_people_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option3bb": {
+                            "text": "info_question2",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3bba": {
+                                    "text": "info_answer2",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3bbaa": {
+                                            "text": "info_town_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "info_town_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option3bc": {
+                            "text": "info_question3",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3bca": {
+                                    "text": "info_answer3",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3bcaaa": {
+                                            "text": "info_griffin_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bcaaaa": {
+                                                    "text": "info_griffin_answer",
+                                                    "speaker": "NPC",
+                                                    "knowledge": "griffin",
+                                                    "choices": {
+                                                        "option3bcaaaaa": {
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3bcaab": {
+                                            "text": "info_wraith_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bcaaaa": {
+                                                    "text": "info_wraith_answer",
+                                                    "speaker": "NPC",
+                                                    "knowledge": "wraith",
+                                                    "choices": {
+                                                        "option3bcaaaaa": {
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3bcaac": {
+                                            "text": "info_werewolf_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bcaaaa": {
+                                                    "text": "info_werewolf_answer",
+                                                    "speaker": "NPC",
+                                                    "knowledge": "werewolf",
+                                                    "choices": {
+                                                        "option3bcaaaaa": {
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3bcaad": {
+                                            "text": "info_vampire_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bcaaaa": {
+                                                    "text": "info_vampire_answer",
+                                                    "speaker": "NPC",
+                                                    "knowledge": "vampire",
+                                                    "choices": {
+                                                        "option3bcaaaaa": {
+                                                        "text": "I see, thank you.",
+                                                        "speaker": "Player",
+                                                        "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3bcaae": {
+                                            "text": "info_draugr_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bcaaaa": {
+                                                    "text": "info_draugr_answer",
+                                                    "speaker": "NPC",
+                                                    "knowledge": "draugr",
+                                                    "choices": {
+                                                        "option3bcaaaaa": {
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "option2b": {
+                    "text": "info_negative",
+                    "speaker": "NPC",
+                    "condition": "aggr>12",
+                    "choices": {
+                        "option2ba": {
+                            "text": "info_negative_answer",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option3": {
+            "text": "ask_lore",
+            "speaker": "Player",
+            "choices": {
+                "option3a": {
+                    "text": "lore_negative",
+                    "speaker": "NPC",
+                    "condition": "aggr>12",
+                    "choices": {
+                        "option3aa":{
+                            "text": "Why not?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3aaa": {
+                                    "text": "lore_negative_ans",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3aaaa": {
+                                            "text": "Alright then, keep your secrets",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option3ab": {
+                            "text": "Very well then, I won't bother you anymore",
+                            "speaker": "Player", 
+                            "choices": {}
+                        }
+                    }
+                },
+                "option3b": {
+                    "text": "lore_positive",
+                    "speaker": "NPC",
+                    "condition": "aggr<=12",
+                    "choices": {
+                        "option3ba": {
+                            "text": "lore_question1",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3baa": {
+                                    "text": "lore_answer1",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3baaa": {
+                                            "text": "lore_spells_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_spells_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3baab": {
+                                            "text": "lore_scepter_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_scepter_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3baac": {
+                                            "text": "lore_gungnir_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_gungnir_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option3bb": {
+                            "text": "lore_question2",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3bba": {
+                                    "text": "lore_answer2",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3bbaa": {
+                                            "text": "lore_sorcerer_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_sorcerer_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3bbab": {
+                                            "text": "lore_audafir_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_audafir_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3bbac": {
+                                            "text": "lore_curse_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_curse_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option3bc": {
+                            "text": "lore_question3",
+                            "speaker": "Player",
+                            "choices": {
+                                "option3bca": {
+                                    "text": "lore_answer3",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option3bcaa": {
+                                            "text": "lore_empire_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_empire_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3bcab": {
+                                            "text": "lore_war_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_war_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "option3bcac": {
+                                            "text": "lore_ancientones_question",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option3bbaaa": {
+                                                    "text": "lore_ancientones_answer",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option3baaaaa":{
+                                                            "text": "I see, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option4": {
+            "text": "ask_id",
+            "speaker": "Player",
+            "choices": {
+                "option4a": {
+                    "text": "id_positive_answer",
+                    "speaker": "NPC",
+                    "condition": "aggr<=12",
+                    "choices": {
+                        "option4aa": {
+                            "text": "Me, I am just a traveller",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option4ab": {
+                            "text": "I am a very dangerous person, you don't want to mess with me",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                },
+                "option4b": {
+                    "text": "id_negative_answer",
+                    "speaker": "NPC",
+                    "condition": "aggr>12",
+                    "end": "true",
+                    "choices": {
+                        "option4aa": {
+                            "text": "Me, I am just a traveller",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option4ab": {
+                            "text": "I am a very dangerous person, you don't want to mess with me",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option5": {
+            "text": "end_conv",
+            "speaker": "Player",
+            "choices": {
+                "option5a": {
+                    "text": "Goodbye traveller",
+                    "speaker": "NPC",
+                    "end": "true",
+                    "choices": {
+                        "option5aa": {
+                            "text": "Goodbye",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

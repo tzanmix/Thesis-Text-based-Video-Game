@@ -1,0 +1,121 @@
+{
+    "text": "Welcome back, I hope you've made progress in your quest",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "Who are you?",
+            "speaker": "Player",
+            "choices": {
+                "option1a": {
+                    "text": "Come on, I know you remember me",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option1aa": {
+                            "text": "What is this agency?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1aaa": {
+                                    "text": "I have some spies scattered all over the world, and all the information is gathered here.",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option1aaaa": {
+                                            "text": "I see",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option2": {
+            "text": "What do you know about Nesin Nauthuy?",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "If you want some dirt on him, I'd have to charge you another 100 florens.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2ab": {
+                            "text": "Of course you would, but what can you tell me for free?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option2aba": {
+                                    "text": "Fine, fine. This old man is the Grandmaster of the school of the mages, which is located on the Citadel.",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option2abaa": {
+                                            "text": "Alright, thank you.",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        },
+                                        "option2abab": {
+                                            "text": "The Citadel? Where's that?",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option2ababa": {
+                                                    "text": "It is in the Capital, a large fortress that is used as a school for the Elven sages for centuries.\nNow it is open for young sorcerers of every race.",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option2ababaa": {
+                                                            "text": "Alright, thank you.",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option3": {
+            "text": "What exactly do you do here?",
+            "speaker": "Player",
+            "choices": {
+                "option3a": {
+                    "text": "I run a large network of spies that covers the whole world.\nAll the information they gather comes to me, and I sell it to whoever pays a certain price.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option3aa": {
+                            "text": "So you are a spy more than a detective",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        },
+        "option4": {
+            "text": "I should go",
+            "speaker": "Player",
+            "choices": {
+                "option4a": {
+                    "text": "Be well, traveller",
+                    "speaker": "NPC",
+                    "end": "true",
+                    "choices": {
+                        "option4aa": {
+                            "text": "Thank you, goodbye",
+                            "speaker": "Player",
+                            "choices": {}
+                        },
+                        "option4ab": {
+                            "text": "I'm also a dangerous person",
+                            "speaker": "Player",
+                            "choices": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
