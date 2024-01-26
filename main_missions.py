@@ -39,5 +39,5 @@ chapter5.short_description = "Pursue the Grandmaster's leads to find the rogue m
 
 
 
-main_missions = {"prologue": prologue, "chapter1": chapter1, "chapter2": chapter2, "chapter3": chapter3, "chapter4": chapter4}
+main_missions = {"prologue": prologue, "chapter1": chapter1, "chapter2": chapter2, "chapter3": chapter3, "chapter4": chapter4, "chapter5": chapter5}
 # print(list(main_missions.keys())[list(main_missions.values()).index(current_main_mission)])
