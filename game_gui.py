@@ -5,6 +5,7 @@ from adventurelib import Pattern, commands, _available_commands
 import textwrap
 import command_filter
 # import map_loader
+import json
 import csv
 import customtkinter
 import random
@@ -173,6 +174,16 @@ def end_game():
 
 def save_gui():
     save_game.save()
+    for mission in game_rooms.active_missions:
+        if mission.completed:
+            completed_missions.append(mission)
+    mission_type_stats = {"Fetch": 0, "Escort": 0, "Eliminate": 0, "Hunt": 0, "Prologue": 0, "Chapter I": 0, "Chapter II": 0, "Chapter III": 0, "Chapter IV": 0, "Chapter V": 0}
+    #print(completed_missions)
+    for mission in completed_missions:
+        mission_type_stats[mission.type] += 1
+
+    with open('user logs/mission_stats.json', 'w') as json_stats:
+        json.dump(mission_type_stats, json_stats)
 
 def load_gui():
     output_text.delete("0.0", "end")
@@ -183,8 +194,12 @@ def load_gui():
     player_hit_points.configure(text="HP: "+str(game_items.hit_points))
     karma.configure(text="Darkness growth: "+str(game_items.negative_karma))
     current_main_obj.configure(text="Current objective: "+main_missions.current_main_mission.short_description)
+    #update player position
     update_map_position(game_items.x_coord, game_items.y_coord, "red")
     repaint_old_tile(x, y, game_rooms.rooms_obj[x][y].type)
+    
+
+    #update current main objective
     for mission in main_missions.main_missions.values():
         if mission != main_missions.current_main_mission:
             mission.completed = True

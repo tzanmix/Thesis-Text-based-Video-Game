@@ -97,7 +97,7 @@ def darkness_progress(karma):
     elif karma >=40:
         return "The black rot keeps growing, and it reaches your shoulders"
     elif karma >=55:
-        return "Visions start popping in your head, visions of the Dark Lodge the sorcerer told you about. Darkness has consumed you."
+        return "Visions start popping in your head, visions of the Black Lodge the sorcerer told you about. Darkness has consumed you. Everything you see with your eyes starts to fade."
     else:
         return "The rot seems to expand from your fingertips, and cover your palm."
 
@@ -201,8 +201,8 @@ scroll = adv.Item("scroll in an ancient language", "scroll")
 scroll.color = "paper"
 scroll.description = """a scroll from the bookcase of Mulfeilf's dungeon. You cannot make out what those words mean:
 Aulubi aulaulmen posseth ala musau foaya ab nabeis. 
-Mafau gisalali pauth ay Aulbas pes duth. 
-Num yerulf demaulf Keira yaussom"""
+Mafau gisalali pauth ay Aulbas Pes duth. 
+Num demaulf Keira yaussom"""
 
 #torn page of an old book in Maul catacombs
 page = adv.Item("torn page", "page", "old page")
@@ -210,6 +210,16 @@ page.description = """a torn page from the catacombs' secret room. The words wri
 'May darkness consume whomever wishes harm to the Enlightened One'
 This looks like the full spell from the scrolls you found at Mulfeilf's tower south of Hawara,
 it could be the spell that grew the rot on your hand."""
+
+#dictionary found in Nhudelhid camp
+dictionary = adv.Item("dictionary", "book", "notes")
+dictionary.description = """handwritten pages that look like a dictionary of Old Elven tongue, but with a really small variety of words:
+aulba - white
+pes - lodge
+aussom - enter (yaussom - to enter)
+Keira - Enlightenment
+dema - say, imperative: demaulf
+num - please"""
 
 equipped_weapon = steel_sword
 equipped_armour = cloak

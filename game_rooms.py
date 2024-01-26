@@ -430,6 +430,7 @@ nomad_camp_west.description = """You arrive at the encampment of a grand Nomad a
     Hundreds of tents made of goat hide are spread in this rocky terrain, an uncomfortable place for a military encampment,
     but the Nomads from the Far East are not people that enjoy comfort. Troops are being trained, blacksmiths and armorers are practicing their craft right here."""
 nomad_camp_west.super_area_title = "Army of the Naumeir Khanate"
+nomad_camp_west.items.add(game_items.dictionary)
 
 nomad_camp_east = rooms_obj[19][45]
 nomad_camp_east.title = "Khan's tent"
@@ -570,6 +571,14 @@ maul_temple.enter = catacombs
 catacombs.x = 37
 catacombs.y = 2
 catacombs.items.add(game_items.page)
+
+black_lodge = GameArea("The Black Lodge", """You wake up and you see nothing but an infinite void. You're standing on shallow water, its level reaches your ankles. A faint light suddenly appears, you follow it because you feel like it is an exit. It originates from a single candle, which is on a desk, where a dwarf is sitting.""")
+black_lodge.title = "The Lobby - Black Lodge"
+black_lodge.characters.add(characters.arm)
+
+white_lodge = GameArea("The White Lodge", """An endless pure white void expands in front of your eyes. Large structures made of a dark rock are floating in the air, including the one you are standing in.""")
+white_lodge.title = "The Astral Plane - White Lodge"
+white_lodge.characters.add(characters.mulfeilf)
 
 demo_locations = []
 for i in range(50):
@@ -789,7 +798,9 @@ class Mission():
         self.completed = False
         self.successful = ""
         self.enemy_npc = False
-        
+        if self.quest_giver.favour_completed:
+            self.completed = True
+            self.successful = True
         self.reward = random.randint(100,200)
         if self.type in main_mission_type:
             self.description = main_mission_descriptions[self.type]
@@ -813,16 +824,23 @@ class Mission():
             self.enemy_npc = enemy_npc
             rooms_obj[location[0]][location[1]].characters.add(self.objective)
             rooms_obj[location[0]][location[1]].characters.add(enemy_npc)
+            if self.completed:
+                self.enemy_npc.is_alive = False
+                #rooms_obj[location[0]][location[1]].characters.remove(self.objective)
             self.title = "Favours: Escort "+self.objective.name + " back to "+self.location
 
         elif self.type == "Eliminate":
             self.objective = characters.generate_enemy_npc()
             rooms_obj[location[0]][location[1]].characters.add(self.objective)
+            if self.completed:
+                self.objective.is_alive = False
             self.title = "Bounty: Eliminate "+self.objective.name
 
         elif self.type == "Hunt":
             self.objective = characters.generate_monster(objective)
             rooms_obj[location[0]][location[1]].characters.add(self.objective)
+            if self.completed:
+                self.objective.is_alive = False
             self.title = "Monster Hunt: Find and eliminate "+self.objective.name
 
     def check_success(self, current_room, inventory):

@@ -54,12 +54,16 @@ def save():
         json.dump({"x_coord": game_items.x_coord, "y_coord": game_items.y_coord, "hit_points": game_items.hit_points, "avail_spells": game_items.avail_spells, 
                    "floren_balance": game_items.floren_balance, "darkness": game_items.negative_karma, 
                    "main_mission": list(main_missions.main_missions.keys())[list(main_missions.main_missions.values()).index(main_missions.current_main_mission)]}, json_player)
-
+    with open('user logs/player_condition.json', 'w') as json_player:
+        json.dump({"x_coord": game_items.x_coord, "y_coord": game_items.y_coord, "hit_points": game_items.hit_points, "avail_spells": game_items.avail_spells, 
+                   "floren_balance": game_items.floren_balance, "darkness": game_items.negative_karma, 
+                   "main_mission": list(main_missions.main_missions.keys())[list(main_missions.main_missions.values()).index(main_missions.current_main_mission)]}, json_player)
     #keep track of the player's visited main locations
     locations_visited = []
     for location in game_rooms.towns:
         for area in location:
             locations_visited.append({f"{area.title}": area.visited})
+   
     with open('save files/visited_locations.json', 'w') as json_locations:
         json.dump(locations_visited, json_locations)
     #save missions and mission progress
@@ -161,12 +165,15 @@ def load():
         with open('save files/visited_locations.json') as json_locations:
             locations_visited = json.load(json_locations)
         for i in range(len(locations_visited)):
-            game_rooms.list_of_main_locations[i].visited = locations_visited[i].keys()
+            game_rooms.list_of_main_locations[i].visited = locations_visited[i].get(game_rooms.list_of_main_locations[i].title)
 
         #add back some main characters
         game_rooms.vestanvarth_port.characters.add(characters.alnaasi_captain)
         game_rooms.cathairbhaile_port.characters.add(characters.alnaasi_captain)
         game_rooms.capital_port.characters.add(characters.alnaasi_captain)
         game_rooms.nordvik_port.characters.add(characters.captain)
+
+        #update player position
+        game_rooms.current_room = game_rooms.rooms_obj[game_items.x_coord][game_items.y_coord]
     except FileNotFoundError:
         print("Save files corrupted")

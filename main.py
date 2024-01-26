@@ -6,7 +6,7 @@ import game_rooms
 import game_items
 import random
 import dialog
-import generate_npc
+#import generate_npc
 import characters
 import main_missions
 # import time
@@ -86,9 +86,8 @@ def update_hit_points(hit_points):
 
 #fast travel when you click on a tile from the map
 def fast_travel(event):
-    global x_coord, y_coord
-    x = x_coord
-    y = y_coord
+    x = game_items.x_coord
+    y = game_items.y_coord
     for rect_id, rect_coords in rectangle_coords.items():
 
         x1, y1, x2, y2 = rect_coords
@@ -96,21 +95,21 @@ def fast_travel(event):
             new_x_coord = rect_id[0]
             new_y_coord = rect_id[1]
             #add a range to the fast travel mechanic
-            if abs(new_x_coord-x)>=5 or abs(new_y_coord-y)>=5:
+            if game_rooms.current_room == game_rooms.black_lodge or game_rooms.current_room == game_rooms.white_lodge:
+                print_gui("You try to use the teleportation Scepter, but it doesn't seem to work here.")
+            elif abs(new_x_coord-x)>=5 or abs(new_y_coord-y)>=5:
                 print_gui("You try to cast the teleportation spell, but you do not have enough energy to travel that far.\n")
             elif game_rooms.rooms_obj[rect_id[0]][rect_id[1]].type == "0":
                 print_gui("You cannot fast travel to the sea, you do not know how to swim.\n")
             else:
                 game_rooms.current_room = game_rooms.rooms_obj[rect_id[0]][rect_id[1]]
-                x_coord = new_x_coord
-                y_coord = new_y_coord
                 game_items.x_coord = new_x_coord
                 game_items.y_coord = new_y_coord
                 print_gui(random.choice(["You use the teleporting spell to magically travel away from here.\n","You use the warp spell to fast travel.\n",
                                         "You cast the teleportation spell to travel instantly elsewhere.\n"]))
                 try:
                     repaint_old_tile(x, y, rooms_dict[f'({x}, {y})'])
-                    update_map_position(x_coord, y_coord, "red")
+                    update_map_position(game_items.x_coord, game_items.y_coord, "red")
                 except:
                     print_gui("ERROR")
                 update_current_location(game_rooms.current_room)
@@ -159,7 +158,17 @@ def go_to_area(area):
 
 
 def check_dark_lodge_visit(karma):
-    pass
+    if karma >=50 or game_items.hit_points<=0:
+        game_rooms.current_room = game_rooms.black_lodge
+        update_current_location(game_rooms.current_room)
+        look()
+
+
+@when("enlightenment")
+def white_lodge_visit():
+    game_rooms.current_room = game_rooms.white_lodge
+    update_current_location(game_rooms.current_room)
+    look()
 
 @when("inventory")
 @when("inv")
@@ -340,6 +349,12 @@ def fight_enemy(character):
             check_mission_completed()
             if char.proffession == "bandit" or char.type == "monster":
                 pass
+            elif char == characters.mulfeilf:
+                main_missions.chapter5.completed = True
+                current_main_obj.configure(text="You do not have any other main objectives")
+                print_gui("The rogue sorcerer is dead, but you seem to be trapped in the White Lodge.")
+                print_gui("\n\n~~~~ΣΕ ΕΥΧΑΡΙΣΤΩ ΠΟΥ ΠΗΡΕΣ ΜΕΡΟΣ ΣΤΗ ΔΟΚΙΜΗ ΤΗΣ BETA~~~~\n~~~~Μπορείς να συνεχίσεις την εξερεύνηση του κόσμου ελεύθερα τώρα που η ιστορία ολοκληρώθηκε~~~~~")
+
             else:
                 set_other_npc_aggr(char)
                 game_items.negative_karma += 5
@@ -369,6 +384,7 @@ def fight_enemy(character):
             if game_items.total_hit_points <= 0:
                 #end_game(victory=False)
                 print_gui("Your journey ends here\n~~~~YOU ARE DEAD~~~~")
+                check_dark_lodge_visit(game_items.negative_karma)
                 # time.sleep(5)
                 #close_game()
 
@@ -407,6 +423,12 @@ def shoot_character(character):
                 set_other_npc_aggr(char)
                 if char.proffession == 'bandit' or char.type == "monster":
                     pass
+                elif char == characters.mulfeilf:
+                    main_missions.chapter5.completed = True
+                    current_main_obj.configure(text="You do not have any other main objectives")
+                    print_gui("The rogue sorcerer is dead, but you seem to be trapped in the White Lodge.")
+                    print_gui("\n\n~~~~ΣΕ ΕΥΧΑΡΙΣΤΩ ΠΟΥ ΠΗΡΕΣ ΜΕΡΟΣ ΣΤΗ ΔΟΚΙΜΗ ΤΗΣ BETA~~~~\n~~~~Μπορείς να συνεχίσεις την εξερεύνηση του κόσμου ελεύθερα τώρα που η ιστορία ολοκληρώθηκε~~~~~")
+
                 else:
                     game_items.negative_karma += 5
                     print_gui(game_items.darkness_progress(game_items.negative_karma))
@@ -421,6 +443,7 @@ def shoot_character(character):
                 # Is the player dead?
                 if game_items.total_hit_points <= 0:
                     print_gui("Your journey ends here\n~~~~YOU ARE DEAD~~~~")
+                    check_dark_lodge_visit(game_items.negative_karma)
 
 
 
@@ -467,8 +490,8 @@ def stealth_kill(character):
     elif char.is_alive==False:
         print_gui(f"{char.name} is already dead.")
     else:
-        if char.type != "human":
-            say_gui(f"You try to sneak behind the {char}, but it hears you.")
+        if char.type != "human" or char == "mulfeilf":
+            say_gui(f"You try to sneak behind the {char.proffession}, but {char.subj_pronouns} hears you.")
             enemy_ambush(char)
         else:
 
@@ -604,6 +627,12 @@ def cast_spell(spell):
                     character.hit_points = character.hit_points - current_spell['damage']/num_of_chars
                     if character.hit_points<=0:
                         character.is_alive = False
+                        if character == characters.mulfeilf:
+                            main_missions.chapter5.completed = True
+                            current_main_obj.configure(text="You do not have any other main objectives")
+                            print_gui("The rogue sorcerer is dead, but you seem to be trapped in the White Lodge.")
+                            print_gui("\n\n~~~~ΣΕ ΕΥΧΑΡΙΣΤΩ ΠΟΥ ΠΗΡΕΣ ΜΕΡΟΣ ΣΤΗ ΔΟΚΙΜΗ ΤΗΣ BETA~~~~\n~~~~Μπορείς να συνεχίσεις την εξερεύνηση του κόσμου ελεύθερα τώρα που η ιστορία ολοκληρώθηκε~~~~~")
+
                         # if character.proffession != 'bandit':
                         #     set_other_npc_aggr(character)
                         #     game_items.negative_karma += 5
@@ -747,7 +776,7 @@ def dialog_character(character):
             else:
                 pass
             
-            if not char.greeting and not char.kin_killed:
+            if not char.greeting and not char.kin_killed and char.context != "arm":
                 print_gui(f"{char.name}>> "+ dialog.character_greeting(char))
             elif not char.kin_killed:
                 print_gui(f"{char.name}>> "+ char.greeting)
@@ -809,6 +838,24 @@ def dialog_character(character):
                     current_main_obj.configure(text="Current objective: "+main_missions.current_main_mission.short_description)
                     print_gui("\n\n~~A scroll with the last known hideouts of Mulfeilf has been added to your inventory~~")
                     game_items.inventory.add(game_items.instructions)
+                elif char.context == "arm":
+                    dialog.open_dialog_window(char, "receptionist")
+                    dialog.dialog_window.wait_window()
+                    print_gui("The sunlight is blinding you, you seem to be back to the regular world. The rot has been weakened, but it still covers your fingers.")
+                    game_rooms.current_room = game_rooms.rooms_obj[game_items.x_coord][game_items.y_coord]
+                    game_items.negative_karma = 0
+                    karma.configure(text="Darkness growth: "+ str(game_items.negative_karma))
+                elif char.context == "mulfeilf":
+                    dialog.open_dialog_window(char, "mulfeilf")
+                    dialog.dialog_window.wait_window()
+                    if char.aggression>=20:
+                        enemy_ambush(char)
+                    else:
+                        game_rooms.current_room = game_rooms.rooms_obj[game_items.x_coord][game_items.y_coord]
+                        print_gui("You got back from the White Lodge. The rot is still in your hands, but now you have a new goal, to stop Nesin Nauthuy, the grandmaster of the Citadel from summoning the Dark Lord.")
+                        print_gui("\n\n~~~~ΣΕ ΕΥΧΑΡΙΣΤΩ ΠΟΥ ΠΗΡΕΣ ΜΕΡΟΣ ΣΤΗ ΔΟΚΙΜΗ ΤΗΣ BETA~~~~\n~~~~Μπορείς να συνεχίσεις την εξερεύνηση του κόσμου ελεύθερα τώρα που η ιστορία ολοκληρώθηκε~~~~~")
+                        main_missions.chapter5.completed = True
+                        current_main_obj.configure(text="You do not have any other main objectives")
                 else:
                     if char.proffession == 'captain':
                         set_context("captain")
@@ -1039,9 +1086,7 @@ def go(direction: str):
         direction {str} -- which direction does the player want to move
     """
 
-    # What is your current room?
-    global x_coord
-    global y_coord
+
 
     # Is there an exit in that direction?
     next_room = game_rooms.current_room.exit(direction)
@@ -1065,48 +1110,36 @@ def go(direction: str):
             if current_context:
                 # print_gui("Fare thee well, traveler!")
                 set_context(None)
-            x = x_coord
-            y = y_coord
+            x = game_items.x_coord
+            y = game_items.y_coord
             game_rooms.current_room = next_room
             if direction == "enter" or direction == "leave":
                 print_gui(f"~You {direction} the {game_rooms.current_room.title}~")
             else:
                 print_gui(f"~You go {direction}.~")
             if direction == "north":
-                x_coord -= 1
                 game_items.x_coord -= 1
             elif direction == "south":
-                x_coord += 1
                 game_items.x_coord += 1
             elif direction == "west":
-                y_coord -= 1
                 game_items.y_coord -= 1
             elif direction == "east":
-                y_coord += 1
                 game_items.x_coord += 1
             elif direction == "northwest":
-                x_coord -= 1
-                y_coord -= 1
                 game_items.x_coord -= 1
                 game_items.y_coord -= 1
             elif direction == "southwest":
-                x_coord += 1
-                y_coord -= 1
                 game_items.x_coord += 1
                 game_items.y_coord -= 1
             elif direction == "northeast":
-                x_coord -= 1
-                y_coord += 1
                 game_items.x_coord -= 1
                 game_items.y_coord += 1
             elif direction == "southeast":
-                x_coord += 1
-                y_coord += 1
                 game_items.x_coord += 1
                 game_items.y_coord += 1
             try:
                 repaint_old_tile(x, y, rooms_dict[f'({x}, {y})'])
-                update_map_position(x_coord, y_coord, "red")
+                update_map_position(game_items.x_coord, game_items.y_coord, "red")
             except:
                 pass
             update_current_location(game_rooms.current_room)

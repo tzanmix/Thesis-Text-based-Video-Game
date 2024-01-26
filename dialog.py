@@ -356,10 +356,10 @@ def traverse_tree(branch_index, type, character):
     except IndexError:
         for j in range(len(choice_buttons)):
             choice_buttons[j].destroy()
-        if (type == "talk" or type == "audafir" or type == "spy" or type == "grandmaster") and current_node.end == "true":
+        if (type == "talk" or type == "audafir" or type == "spy" or type == "grandmaster" or type == "receptionist" or type == "mulfeilf") and current_node.end == "true":
             choice_button = customtkinter.CTkButton(dialog_window, width=700, height=50, text="Leave the conversation", command= lambda: dialog_window.destroy(), text_color="black")
             label.configure(text = f"You leave the {character.proffession}")
-        elif (type == "talk" or type == "audafir" or type == "spy" or type == "grandmaster") and current_node.end != "end_conv":
+        elif (type == "talk" or type == "audafir" or type == "spy" or type == "grandmaster" or type == "receptionist" or type == "mulfeilf") and current_node.end != "end_conv":
             new_node = dialog_tree
             label.configure(text = random.choice(["Anything else?", "Do you want anything else to ask me?"]))
             #dynamically create all the new choices for the dialog, based on the nodes of the dialog tree
@@ -432,7 +432,13 @@ def open_dialog_window(character, type):
                 tree = json.load(json_file)
     elif type == "grandmaster":
         with open("dialogs/grandmaster.json", "r") as json_file:
-                tree = json.load(json_file)
+            tree = json.load(json_file)
+    elif type == "receptionist":
+        with open("dialogs/receptionist.json", "r") as json_file:
+            tree = json.load(json_file)
+    elif type == "mulfeilf":
+        with open('dialogs/mulfeilf.json', 'r') as json_file:
+            tree = json.load(json_file)
     dialog_tree = load_json_to_dialog_node(tree)
     current_node = dialog_tree
     dialog_window = customtkinter.CTkToplevel(game_gui.root)
@@ -458,19 +464,22 @@ def character_greeting(character):
         return random.choice(["Get lost vagrant.", "Stay out of my sight.", "Get outta here.", "Out of my way, drifter"])
     
 def character_introduction(character):
-    if character.aggression <=10 and character.proffession != "bandit" and character.proffession != "captain":
-        return random.choice([f"Allow me to introduce myself, I am {character.name}", 
-                              f"My name is {character.name}",
-                              f"I am {character.name}"])
-    elif character.proffession == "bandit":
-        return random.choice(["Greetings stranger, be kind to give me all your belongings, and I may let you walk away","Well well, what do we have here? Give me everything you have, and don't be a hero.", "Halt there, give me your money and food."])
-    elif character.proffession == "captain":
-        return f"I am {character.name}, captain of this longship right there, the Freya's Grace. I will sail soon for Vestenvarth, if you want to join, the price is 200 florens for a place at my ship."
+    if character.context == "arm":
+        return "Welcome to the Black Lodge, I am the Receptionist of this fine establishment."
     else:
-        # return random.choice(["I'm Nanya, none of your business", "Get lost!", "None of your business vagrant!", "I am not in the mood of getting to know you",
-        #                       "I don't care who you are, why should you?"])
-        return random.choice([f"Get lost!", "None of your business, vagrant!", "Get out of my sight!", "Are you looking for trouble, stranger?", 
-                              "Why? You want to know who'll put you to the ground right now?"])
+        if character.aggression <=10 and character.proffession != "bandit" and character.proffession != "captain":
+            return random.choice([f"Allow me to introduce myself, I am {character.name}", 
+                                f"My name is {character.name}",
+                                f"I am {character.name}"])
+        elif character.proffession == "bandit":
+            return random.choice(["Greetings stranger, be kind to give me all your belongings, and I may let you walk away","Well well, what do we have here? Give me everything you have, and don't be a hero.", "Halt there, give me your money and food."])
+        elif character.proffession == "captain":
+            return f"I am {character.name}, captain of this longship right there, the Freya's Grace. I will sail soon for Vestenvarth, if you want to join, the price is 200 florens for a place at my ship."
+        else:
+            # return random.choice(["I'm Nanya, none of your business", "Get lost!", "None of your business vagrant!", "I am not in the mood of getting to know you",
+            #                       "I don't care who you are, why should you?"])
+            return random.choice([f"Get lost!", "None of your business, vagrant!", "Get out of my sight!", "Are you looking for trouble, stranger?", 
+                                "Why? You want to know who'll put you to the ground right now?"])
     
 def give_task(mission):
     type = mission.type

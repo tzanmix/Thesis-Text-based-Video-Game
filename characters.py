@@ -8,7 +8,7 @@ import mission_generator
 # All characters have some properties
 adv.Item.greeting = ""
 adv.Item.context = ""
-
+adv.Item.favour_completed = False
 
 #all_monster_types = ["giant", "draugr", "wight", "werewolf", "griffin", "basilisk", "dragon", "vampire"]
 all_monster_types = ["draugr", "werewolf", "griffin", "vampire", "wraith"]
@@ -44,6 +44,8 @@ class NonPlayableCharacter(adv.Item):
     mission_accepted = False
     mission_refused = False
     favour_completed = False
+    favour = []
+    hit_points = 20
     intelligence = 0
     x = -2
     y = -2
@@ -58,6 +60,7 @@ class MonsterEnm(adv.Item):
     subj_pronouns = "it"
     obj_pronouns = "it"
     proffession = "monster"
+    hit_points = 20
     is_alive = True
     kin_killed = False
     x = -2
@@ -374,7 +377,7 @@ mulfeilf = NonPlayableCharacter("Mulfeilf Deim", "sorcerer", "rogue mage", "rogu
 mulfeilf.description = """The man you've been looking for finally stands in front of you. His long red fiery hair cover his pointy ears, a leather patch covers his right eye, he removes his golden cloak and his chainmail made from magical gems unveils.\n"""
 mulfeilf.context = "mulfeilf"
 mulfeilf.proffession = "sorcerer"
-mulfeilf.aggression = 0
+mulfeilf.aggression = 14
 mulfeilf.floren_balance = 100
 mulfeilf.items = adv.Bag([game_items.cloak])
 mulfeilf.favour = []
@@ -382,5 +385,13 @@ mulfeilf.intelligence = 20
 mulfeilf.x = -3
 mulfeilf.y = -3
 
+arm = NonPlayableCharacter("The Black Lodge Receptionist", "The Black Lodge Guardian", "guardian", "receptionist", "arm", "dwarf")
+arm.description = """The dwarf is wearing some weird clothes, you haven't seen anything like these. His trousers stop abruptly at his ankles and the sleeves barely reach his wrists. The fabric itself appears to be of a vibrant hue, a striking red. """
+arm.context = "arm"
+arm.proffession = "guardian"
+arm.aggression = 0
+arm.floren_balance = 0
+arm.items = adv.Bag([game_items.cloak])
+arm.intelligence = 20
 
-main_mission_characters = [audafir, captain, spy, grandmaster, mulfeilf]
+main_mission_characters = [audafir, captain, spy, grandmaster, arm]
