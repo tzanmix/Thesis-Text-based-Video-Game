@@ -14,9 +14,7 @@ import customtkinter
 import os
 
 #game setup
-#game_rooms.current_room=game_rooms.forest_main_road
-# game_rooms.current_room=game_rooms.rooms_obj[4][9]
-# x_coord = 4
+
 # y_coord = 9
 x_coord = game_items.x_coord
 y_coord = game_items.y_coord
@@ -25,22 +23,7 @@ fast_travel_rooms = {"Vestenvarth": game_rooms.vestanvarth_port, "Nordvik": game
                      "Hawara": game_rooms.hawara_port, "Capital": game_rooms.capital_port}
 game_rooms.current_room.visited=False
 stealth = 14
-#hit_points=20
-#in-game currency for player
-# floren_balance = 20
-# enemy_hit_points=20
-# equipped_item = game_items.steel_sword
-# game_items.equipped_weapon = game_items.steel_sword
-# equipped_armour = game_items.cloak
-# game_items.equipped_armour = game_items.cloak
-# equipped_item = game_items.equipped_weapon
-# equipped_armour = game_items.equipped_armour
 
-
-#all active quests
-# active_missions = []
-# completed_missions = []
-# inventory=game_items.inventory
 
 #dictionary that contains all terrain scores of the game map
 rooms_dict = {}
@@ -162,6 +145,8 @@ def check_dark_lodge_visit(karma):
         game_rooms.current_room = game_rooms.black_lodge
         update_current_location(game_rooms.current_room)
         look()
+        #reset health
+        game_items.hit_points = 20
 
 
 @when("enlightenment")
@@ -302,7 +287,6 @@ def show_equipped_items():
     print_gui(f"Armour: {game_items.equipped_armour}")
     print_gui(f"Total weight: {game_items.equipped_weapon.weight+game_items.equipped_armour.weight}")
 
-##----------------NEEDS REWORK------------------
 ## COMBAT ##
 @when("attack CHARACTER", context=get_context())
 @when("fight CHARACTER", context=get_context())
@@ -311,8 +295,6 @@ def fight_enemy(character):
     
 
     char = game_rooms.current_room.characters.find(character)
-    #enemy_hit_points = char.hit_points
-    #print("Enemy Hit points: ", char.hit_points)
 
     # Is the character there?
     if not char:
@@ -367,17 +349,6 @@ def fight_enemy(character):
             print_gui(" ")
 
             # Then the enemy tries
-            # enemy_attack = randint(0, char.attack_dmg)
-            # if enemy_attack == 0:
-            #     print_gui(f"The {character}'s arm whistles harmlessly over your head!")
-            # else:
-            #     print_gui(
-            #         f"""
-            #         The {character} swings his mighty fist,
-            #         and does {enemy_attack} damage!
-            #         """
-            #     )
-            #     hit_points -= enemy_attack
             enemy_ambush(character)
 
             # Is the player dead?
@@ -385,11 +356,6 @@ def fight_enemy(character):
                 #end_game(victory=False)
                 print_gui("Your journey ends here\n~~~~YOU ARE DEAD~~~~")
                 check_dark_lodge_visit(game_items.negative_karma)
-                # time.sleep(5)
-                #close_game()
-
-            #print_player_condition(character)
-            # print_gui(" ")
 
 
 @when("shoot at CHARACTER")
