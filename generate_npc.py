@@ -94,8 +94,8 @@ def generate_description(proffession, nationality, gender, obj_pronouns, subj_pr
             descr_middle = descr_middle + f"The {npc_descr} man also has "+ random.choice(["long ", "short ", "coarse ", "sparse ", " "])+ random.choice(["curly", "straight"])+ " "+random.choice(["black", "chestnut", "blonde", "white", "platinum", "red", "gold", "silver"])+" hair and "+  random.choice(["a sharp beard", "a thick and dense beard", "a slender moustache", "thick sideburns"])+".\n"
         if proffession != "soldier":
             descr_middle = descr_middle + random.choice(npc_clothes_male[nationality])
-    else:
-        descr_middle = descr_middle + f"The {npc_descr} woman also has"+ random.choice(["long", "short"])+ " "+ random.choice(["curly", "straight", "coarse"])+ " "+random.choice(["black", "chestnut", "blonde", "white", "platinum", "red", "gold", "silver"])+" hair. " 
+    elif gender == 0:
+        descr_middle = descr_middle + f"The {npc_descr} woman also has "+ random.choice(["long", "short"])+ " "+ random.choice(["curly", "straight", "coarse"])+ " "+random.choice(["black", "chestnut", "blonde", "white", "platinum", "red", "gold", "silver"])+" hair. " 
         if proffession != "soldier":
             descr_middle = descr_middle + random.choice(npc_clothes_female[nationality])
     
