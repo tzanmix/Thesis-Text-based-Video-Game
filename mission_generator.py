@@ -1,12 +1,13 @@
 import random
 import csv
+import os
 
 game_rooms = {}
 locations = []
 demo_locations = []
 locations2 = ['4,8']
 
-with open('assets/map_test.csv', 'r') as file:
+with open(os.getcwd()+'/assets/map_test.csv', 'r') as file:
     csv_reader = csv.DictReader(file)
     for row in csv_reader:
         game_rooms[row['key']] = row['value']
