@@ -14,6 +14,7 @@ import game_rooms
 import main_missions
 import game_items
 import characters
+import os
 
 terrain_types = {'0': "#0c17ad", '1': "#12bde3", '2': "#de9e31", '3': "#53c90e", '4': "#21420d", '5': "#9c741f", '6': "#453411", '7': "white"}
 # game_rooms = {}
@@ -87,7 +88,7 @@ def submit_command(event):
     user_input.set("")
 
     #write the user commands in user logs folder
-    logs = open("user logs/logs.txt", "a")
+    logs = open(os.getcwd()+"/user logs/logs.txt", "a")
     #logs.write(user_input.get()+"\n")
     logs.write(inp)
     logs.write("\n")
@@ -111,7 +112,7 @@ def enter_bind(event):
 def open_map():
     
     game_rooms = {}
-    with open('assets/map_test.csv', 'r') as file:
+    with open(os.getcwd()+'/assets/map_test.csv', 'r') as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             game_rooms[row['key']] = row['value']
@@ -182,7 +183,7 @@ def save_gui():
     for mission in completed_missions:
         mission_type_stats[mission.type] += 1
 
-    with open('user logs/mission_stats.json', 'w') as json_stats:
+    with open(os.getcwd()+'/user logs/mission_stats.json', 'w') as json_stats:
         json.dump(mission_type_stats, json_stats)
 
 def load_gui():
@@ -307,7 +308,7 @@ def open_tutorial():
     tutorial = customtkinter.CTkToplevel(root)
     tutorial.geometry("700x700")
     tutorial.attributes("-topmost","true")
-    with open('assets/tutorial.txt','r', encoding='utf-8') as tutorial_txt:
+    with open(os.getcwd()+'/assets/tutorial.txt','r', encoding='utf-8') as tutorial_txt:
         text = tutorial_txt.read()
 
     tutorial_textbox = customtkinter.CTkTextbox(tutorial, width=680, height=680, wrap="word", font=(text_font, text_size))

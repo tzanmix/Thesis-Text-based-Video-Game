@@ -7,6 +7,7 @@ import game_rooms
 import game_items
 import main_missions
 import characters
+import os
 
 #nodes from the dialog trees
 class DialogNode:
@@ -409,35 +410,35 @@ def open_dialog_window(character, type):
     global dialog_window, label, choice_buttons
     global current_node, dialog_tree
     if type == "talk":
-        with open("dialogs/dialog_trees.json","r") as json_file:
+        with open(os.getcwd()+"/dialogs/dialog_trees.json","r") as json_file:
             tree = json.load(json_file)
     elif type == "steal":
-        with open("dialogs/bad_reaction.json","r") as json_file:
+        with open(os.getcwd()+"/dialogs/bad_reaction.json","r") as json_file:
             tree = json.load(json_file)
     elif type == "assassinate":
-        with open("dialogs/as_attempt.json","r") as json_file:
+        with open(os.getcwd()+"/dialogs/as_attempt.json","r") as json_file:
             tree = json.load(json_file)
     elif type == "bandit":
-        with open("dialogs/bandit.json","r") as json_file:
+        with open(os.getcwd()+"/dialogs/bandit.json","r") as json_file:
             tree = json.load(json_file)
     elif type == "audafir":
-         with open("dialogs/audafir.json","r") as json_file:
+         with open(os.getcwd()+"/dialogs/audafir.json","r") as json_file:
             tree = json.load(json_file)
     elif type == "spy":
         if main_missions.chapter2.completed:
-            with open("dialogs/spy_chapter_completed.json", "r") as json_file:
+            with open(os.getcwd()+"/dialogs/spy_chapter_completed.json", "r") as json_file:
                 tree = json.load(json_file)
         else:
-            with open("dialogs/spy.json", "r") as json_file:
+            with open(os.getcwd()+"/dialogs/spy.json", "r") as json_file:
                 tree = json.load(json_file)
     elif type == "grandmaster":
-        with open("dialogs/grandmaster.json", "r") as json_file:
+        with open(os.getcwd()+"/dialogs/grandmaster.json", "r") as json_file:
             tree = json.load(json_file)
     elif type == "receptionist":
-        with open("dialogs/receptionist.json", "r") as json_file:
+        with open(os.getcwd()+"/dialogs/receptionist.json", "r") as json_file:
             tree = json.load(json_file)
     elif type == "mulfeilf":
-        with open('dialogs/mulfeilf.json', 'r') as json_file:
+        with open(os.getcwd()+'/dialogs/mulfeilf.json', 'r') as json_file:
             tree = json.load(json_file)
     dialog_tree = load_json_to_dialog_node(tree)
     current_node = dialog_tree

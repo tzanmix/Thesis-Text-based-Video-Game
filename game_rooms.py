@@ -9,6 +9,7 @@ import csv
 import mission_generator
 import generate_npc
 import room_creator
+import os
 
 adv.Room.add_direction("enter", "leave")
 adv.Room.add_direction("northeast", "southwest")
@@ -263,7 +264,7 @@ fork.enter=witch_hut
 
 game_rooms = {}
 
-with open('assets/game_rooms.csv', 'r') as file:
+with open(os.getcwd()+'/assets/game_rooms.csv', 'r') as file:
     csv_reader = csv.DictReader(file)
     for row in csv_reader:
         game_rooms[row['key']] = eval(row['value'])

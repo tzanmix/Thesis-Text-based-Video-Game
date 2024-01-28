@@ -11,7 +11,7 @@ import characters
 import main_missions
 # import time
 import customtkinter
-
+import os
 
 #game setup
 #game_rooms.current_room=game_rooms.forest_main_road
@@ -44,7 +44,7 @@ stealth = 14
 
 #dictionary that contains all terrain scores of the game map
 rooms_dict = {}
-with open('assets/map_test.csv', 'r') as file:
+with open(os.getcwd()+'/assets/map_test.csv', 'r') as file:
     csv_reader = csv.DictReader(file)
     for row in csv_reader:
         rooms_dict[row['key']] = row['value']

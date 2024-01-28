@@ -4,6 +4,7 @@ import json
 import adventurelib as adv
 import characters
 import main_missions
+import os
 
 #takes dictionary from json and returns an object of class Item
 def create_item(item):
@@ -29,7 +30,7 @@ def save():
             "favour_completed": game_rooms.list_of_characters[i].favour_completed, "intelligence": game_rooms.list_of_characters[i].intelligence, "x": game_rooms.list_of_characters[i].x, "y": game_rooms.list_of_characters[i].y,
             "is_alive": game_rooms.list_of_characters[i].is_alive, "hit_points": game_rooms.list_of_characters[i].hit_points, "floren_balance": game_rooms.list_of_characters[i].floren_balance, "favour": game_rooms.list_of_characters[i].favour,
             "mission_accepted": game_rooms.list_of_characters[i].mission_accepted, "mission_refused": game_rooms.list_of_characters[i].mission_refused})
-    with open('save files/characters.json','w') as json_file:
+    with open(os.getcwd()+'/save files/characters.json','w') as json_file:
         json.dump(characters_json, json_file)
     
     #save current player location, condition, inventory
@@ -38,23 +39,23 @@ def save():
     for item in game_items.inventory:
         items_json.append({"name": item.name, "color": item.color, "edible": item.edible, "cost": item.cost, "wearable": item.wearable, "description": item.description,
                            "weight": item.weight, "damage": item.damage, "bonus": item.bonus})
-    with open('save files/inventory.json','w') as json_inv:
+    with open(os.getcwd()+'/save files/inventory.json','w') as json_inv:
         json.dump(items_json, json_inv)
     weapon = game_items.equipped_weapon
-    with open('save files/equipped_weapon.json', 'w') as json_weapon:
+    with open(os.getcwd()+'/save files/equipped_weapon.json', 'w') as json_weapon:
         json.dump({"name": weapon.name, "color": weapon.color, "edible": weapon.edible, "cost": weapon.cost, "wearable": weapon.wearable, "description": weapon.description,
                            "weight": weapon.weight, "damage": weapon.damage, "bonus": weapon.bonus}, json_weapon)
     armour = game_items.equipped_armour
-    with open('save files/equipped_armour.json', 'w') as json_armour:
+    with open(os.getcwd()+'/save files/equipped_armour.json', 'w') as json_armour:
         json.dump({"name": armour.name, "color": armour.color, "edible": armour.edible, "cost": armour.cost, "wearable": armour.wearable, "description": armour.description,
                            "weight": armour.weight, "damage": armour.damage, "bonus": armour.bonus}, json_armour)
     
     #save player condition and current main objective
-    with open('save files/player_condition.json', 'w') as json_player:
+    with open(os.getcwd()+'/save files/player_condition.json', 'w') as json_player:
         json.dump({"x_coord": game_items.x_coord, "y_coord": game_items.y_coord, "hit_points": game_items.hit_points, "avail_spells": game_items.avail_spells, 
                    "floren_balance": game_items.floren_balance, "darkness": game_items.negative_karma, 
                    "main_mission": list(main_missions.main_missions.keys())[list(main_missions.main_missions.values()).index(main_missions.current_main_mission)]}, json_player)
-    with open('user logs/player_condition.json', 'w') as json_player:
+    with open(os.getcwd()+'/user logs/player_condition.json', 'w') as json_player:
         json.dump({"x_coord": game_items.x_coord, "y_coord": game_items.y_coord, "hit_points": game_items.hit_points, "avail_spells": game_items.avail_spells, 
                    "floren_balance": game_items.floren_balance, "darkness": game_items.negative_karma, 
                    "main_mission": list(main_missions.main_missions.keys())[list(main_missions.main_missions.values()).index(main_missions.current_main_mission)]}, json_player)
@@ -64,7 +65,7 @@ def save():
         for area in location:
             locations_visited.append({f"{area.title}": area.visited})
    
-    with open('save files/visited_locations.json', 'w') as json_locations:
+    with open(os.getcwd()+'/save files/visited_locations.json', 'w') as json_locations:
         json.dump(locations_visited, json_locations)
     #save missions and mission progress
     #save rooms and subrooms
@@ -86,7 +87,7 @@ def load():
         # with open('save files/characters.json','r') as json_file:
         #     characters_list = json.load(json_file)
         #load player condition and equipped items
-        with open('save files/player_condition.json','r') as json_player:
+        with open(os.getcwd()+'/save files/player_condition.json','r') as json_player:
             player_condition = json.load(json_player)
         #print(player_condition)
         game_items.x_coord = player_condition['x_coord']
@@ -99,22 +100,22 @@ def load():
         main_missions.current_main_mission = main_missions.main_missions[player_condition['main_mission']]
         #append active missions with previous completed main missions too
         game_rooms.active_missions.append(main_missions.current_main_mission)
-        with open('save files/equipped_weapon.json','r') as json_weapon:
+        with open(os.getcwd()+'/save files/equipped_weapon.json','r') as json_weapon:
             weapon = json.load(json_weapon)
         game_items.equipped_weapon = create_item(weapon)
-        with open('save files/equipped_armour.json','r') as json_armour:
+        with open(os.getcwd()+'/save files/equipped_armour.json','r') as json_armour:
             armour = json.load(json_armour)
         game_items.equipped_armour = create_item(armour)
         
         #load inventory
         game_items.inventory = adv.Bag()
-        with open('save files/inventory.json','r') as json_inv:
+        with open(os.getcwd()+'/save files/inventory.json','r') as json_inv:
             inv = json.load(json_inv)
         #print(inv)
         for item in inv:
             game_items.inventory.add(create_item(item))
 
-        with open('save files/characters.json', 'r') as json_char:
+        with open(os.getcwd()+'/save files/characters.json', 'r') as json_char:
             char = json.load(json_char)
         for character in char:
             new_npc = characters.NonPlayableCharacter(character['name'], character['name'].split()[0], character['proffession'])
@@ -162,7 +163,7 @@ def load():
                 game_rooms.active_missions.append(mission)
         
         #load other information such as main locations visited by the player
-        with open('save files/visited_locations.json') as json_locations:
+        with open(os.getcwd()+'/save files/visited_locations.json') as json_locations:
             locations_visited = json.load(json_locations)
         for i in range(len(locations_visited)):
             game_rooms.list_of_main_locations[i].visited = locations_visited[i].get(game_rooms.list_of_main_locations[i].title)
