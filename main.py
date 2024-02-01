@@ -1090,7 +1090,7 @@ def go(direction: str):
             elif direction == "west":
                 game_items.y_coord -= 1
             elif direction == "east":
-                game_items.x_coord += 1
+                game_items.y_coord += 1
             elif direction == "northwest":
                 game_items.x_coord -= 1
                 game_items.y_coord -= 1
