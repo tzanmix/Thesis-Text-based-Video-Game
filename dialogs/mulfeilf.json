@@ -1,0 +1,115 @@
+{
+    "text": "So you finally found me, I have to see if the Waters of Maul spoke truly of your actual intentions",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "Lift the curse and I might let you live",
+            "speaker": "Player",
+            "choices": {
+                "option1a": {
+                    "text": "I wasn't the one that cursed you",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option1aa": {
+                            "text": "I don't believe you",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1aaa": {
+                                    "text": "This is a curse that originates from the White Lodge,\nit is supposed to imprison those who wish to release the Harbinger",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option1aaaa": {
+                                            "text": "But I don't wish to release him, you do",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option1aaaaa": {
+                                                    "text": "The old man has tricked you fool!\nHe is the one that wanted to summon the dark lord.\nI found out about his scheme and tried to stop him.\nHe sent many assassins after me, including you.",
+                                                    "speaker": "NPC",
+                                                    "choices": {
+                                                        "option1aaaaaa": {
+                                                            "text": "What? No! What are you talking about?",
+                                                            "speaker": "Player",
+                                                            "choices": {
+                                                                "option1aaaaaaa": {
+                                                                    "text": "He knew that by the moment he would try to summon him, the curse would strike him.\nHe would eventually be trapped in the Black Lodge, but with the Gungnir spear he could trick the fool guardian and leave again and again.",
+                                                                    "speaker": "NPC",
+                                                                    "choices": {
+                                                                        "option1aaaaaaaa": {
+                                                                            "text": "Wait, what does this have to do with me?",
+                                                                            "speaker": "Player",
+                                                                            "choices": {
+                                                                                "option1aaaaaaaaaaaa": {
+                                                                                    "text": "The moment he hired you to hunt me down, you were also considered his ally.\nSo the curse hit you as well, even if you have no intention of bringing back Harbinger.",
+                                                                                    "speaker": "NPC",
+                                                                                    "choices": {
+                                                                                        "option1aaaaaaaaaaaaa": {
+                                                                                            "text": "Why would he give me the spear then?",
+                                                                                            "speaker": "Player",
+                                                                                            "choices": {
+                                                                                                "option1aaaaaaaaaaaaaa": {
+                                                                                                    "text": "You would also need it, once you were consumed by darkness.\nIt is the only item that can get you out of the Black Lodge, as it is the spear of its creator.",
+                                                                                                    "speaker": "NPC",
+                                                                                                    "choices": {
+                                                                                                        "option1b": {
+                                                                                                            "text": "OK, how do we stop your old teacher?",
+                                                                                                            "speaker": "Player",
+                                                                                                            "choices": {
+                                                                                                                "option1ba": {
+                                                                                                                    "text": "Ha, I knew the waters Maul told the truth.\nYou will eventually play a big role in the wars to come.\nI'm afraid he probably vanished, we won't find him easily.",
+                                                                                                                    "speaker": "NPC",
+                                                                                                                    "end": "true",
+                                                                                                                    "choices": {
+                                                                                                                        "option1baa": {
+                                                                                                                            "text": "Alright, I'm going to help you stop the grandmaster",
+                                                                                                                            "speaker": "Player",
+                                                                                                                            "choices": {}
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        },
+                                                                                                        "option1c": {
+                                                                                                            "text": "Enough of your lies!",
+                                                                                                            "speaker": "Player",
+                                                                                                            "choices": {
+                                                                                                                "option1ca": {
+                                                                                                                    "text": "If you're not with me... then you're my enemy!",
+                                                                                                                    "speaker":"NPC",
+                                                                                                                    "end": "true",
+                                                                                                                    "insult": "true",
+                                                                                                                    "choices": {
+                                                                                                                        "option1caa": {
+                                                                                                                            "text": "Only a Herald of Darkness deals with absolutes, I will do what I must",
+                                                                                                                            "speaker": "Player",
+                                                                                                                            "choices": {}
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
