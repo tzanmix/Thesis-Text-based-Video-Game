@@ -1,0 +1,132 @@
+{
+    "text": "Wait, I'm sorry for my ignorance, Allfather is that you?",
+    "speaker": "NPC",
+    "choices": {
+        "option1": {
+            "text": "Uhm... yes?",
+            "speaker": "Player",
+            "choices": {
+                "option1a": {
+                    "text": "Haha, I knew it, from the moment I saw this spear.\nWhat are you doing here? Are you here to visit the prisoners?",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option1aa": {
+                            "text": "Prisoners?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1aaa": {
+                                    "text": "Yes, the Harbinger and his children, the Ancient Ones. The guys you imprisoned?",
+                                    "speaker": "NPC",
+                                    "choices": {
+                                        "option1aaaaa": {
+                                            "text": "Ah, yes, of course. But no, I was just getting out of here",
+                                            "speaker": "Player",
+                                            "choices": {
+                                                "option1aaaaaa": {
+                                                    "text": "Of course, I won't bother the Allfather anymore.\nI'm sure you have a lot of important things, now I'll teleport you out.",
+                                                    "speaker": "NPC",
+                                                    "end": "true",
+                                                    "choices": {
+                                                        "option1aaaaaaaa": {
+                                                            "text": "Thank you",
+                                                            "speaker": "Player",
+                                                            "choices": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option1ab": {
+                            "text": "No, I was just leaving, you know how I can get out?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option1aba": {
+                                    "text": "Don't worry, just close your eyes, count to three, then to minus five,\nthen do a roll on the ground, and you will be out",
+                                    "speaker": "NPC",
+                                    "end": "true",
+                                    "choices": {
+                                        "option1abaa": {
+                                            "text": "Wait, what?",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "option2": {
+            "text": "No",
+            "speaker": "Player",
+            "choices": {
+                "option2a": {
+                    "text": "Wait, then who are you? Why do you have His spear?\nAaaagh, you are the mercenery who got cursed, who died in the Greatest War in 1 BGW.",
+                    "speaker": "NPC",
+                    "choices": {
+                        "option2aa": {
+                            "text": "The what war??",
+                            "speaker": "Player",
+                            "choices": {
+                                "option2aca": {
+                                    "text": "Oops, I told you too much, anyway, I'm getting you out of here.\nYou have an important role to play in the following years.",
+                                    "speaker": "NPC",
+                                    "end": "true",
+                                    "choices": {
+                                        "option2acaa": {
+                                            "text": "Wait, I have so many questions",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option2ab": {
+                            "text": "BGW?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option2aba": {
+                                    "text": "Yes, Before the Great War, oops, I shouldn't be telling you this,\nyou are not supposed to know your fate.\nWell, if anyone asks, you didn't hear it from me.\nAnyway, I shall bring you back wherever you were now.",
+                                    "speaker": "NPC",
+                                    "end": "true",
+                                    "choices": {
+                                        "option2acaa": {
+                                            "text": "Wait, I have so many questions",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "option2ac": {
+                            "text": "I DIED?",
+                            "speaker": "Player",
+                            "choices": {
+                                "option2aca": {
+                                    "text": "Oops, I told you too much, anyway, I'm getting you out of here.\nYou have an important role to play in the following years.",
+                                    "speaker": "NPC",
+                                    "end": "true",
+                                    "choices": {
+                                        "option2acaa": {
+                                            "text": "Wait, I have so many questions",
+                                            "speaker": "Player",
+                                            "choices": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
