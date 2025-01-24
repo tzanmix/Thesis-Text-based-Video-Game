@@ -286,8 +286,6 @@ def write_logs(txt):
             #print(f"{town[0].super_area_title}: {cur_visited_status}")
             if cur_visited_status:
                 journal_textbox.insert("0.0", town[0].super_area_title+"\n\n"+game_rooms.locations_journal_entries[area.super_area_title]+"\n\n\n")
-        #journal_textbox.insert("0.0", game_rooms.towns[0][0].super_area_title)
-    #journal_textbox.insert("0.0", txt)
     elif txt == "Characters":
         journal_textbox.insert("0.0", "As you meet new people in your journey, the journal will be updated.\n\n\n")
         for character in characters.main_mission_characters:
@@ -390,7 +388,6 @@ load_button.grid(row=0, column=4, padx=2, pady=2)
 output_text.grid(row=1, column=0, columnspan=9, padx=2, pady=2)
 input_entry.grid(row=2, column=0, columnspan=8, padx=2, pady=2)
 enter_btn.grid(row=2, column=8, padx=2, pady=2)
-#vert_scrollbar.grid(row=1, column=9)
 current_location.grid(row=3, column=10, padx=2, pady=2)
 player_hit_points.grid(row=3, column=0, padx=2, pady=2)
 player_weight.grid(row=3, column=1, padx=2, pady=2)
@@ -398,4 +395,3 @@ current_main_obj.grid(row=4, column=0, padx=2, pady=2, columnspan=4)
 karma.grid(row=5, column=0, padx=2, pady=2)
 open_map()
 
-# root.mainloop()
