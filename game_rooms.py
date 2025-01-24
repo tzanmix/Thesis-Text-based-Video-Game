@@ -813,7 +813,6 @@ class Mission():
             self.target_object = game_items.generate_weapon(self.objective, condition)
             rooms_obj[location[0]][location[1]].items.add(self.target_object)
             
-            #self.description = self.description+"The "+quest_giver.nationality+" "+quest_giver.proffession+" has lost "+quest_giver.gen_pronouns+" "+self.target_object+" and has tasked you with returning it to "+quest_giver.obj_pronouns+".\nYou will find it in "+self.location
             if self.type == "Fetch":
                 self.title = "Favours: Return " + self.objective + " to " + self.quest_giver.name 
             else:

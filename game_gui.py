@@ -227,7 +227,6 @@ def load_gui():
         characters.spy.previously_met = True
         characters.grandmaster.previously_met = True
 
-    #ADD MAIN MISSION CHARACTERS AND CAPTAINS
 
 
 # Add a Scrollbar(horizontal)
@@ -248,28 +247,6 @@ vert_scrollbar.configure(command=output_text.yview)
 
 #adding a top menu
 
-# menubar = tk.Menu(root, background="blue")
-# root.configure(menu=menubar)
-
-# filemenu = tk.Menu(menubar, tearoff=0, background="blue")
-# filemenu.add_command(label="Save", command=save_game)
-# filemenu.add_command(label="Load", command=load_game)
-# filemenu.add_separator()
-# filemenu.add_command(label="Exit", command=root.quit)
-# menubar.add_cascade(label="File", menu=filemenu)
-
-# helpmenu = tk.Menu(menubar, tearoff=0)
-# helpmenu.add_command(label="User Command Guide", command=donothing)
-# helpmenu.add_command(label="About", command=donothing)
-# menubar.add_cascade(label="Help", menu=helpmenu)
-
-# journalmenu = tk.Menu(menubar, tearoff=0)
-# journalmenu.add_command(label="Quests", command=donothing)
-# journalmenu.add_command(label="Characters", command=donothing)
-# journalmenu.add_command(label="Locations", command=donothing)
-# journalmenu.add_command(label="Bestiary", command=donothing)
-# journalmenu.add_command(label="Map", command=open_map)
-# menubar.add_cascade(label="Journal", menu=journalmenu)
 
 question_mark = tk.PhotoImage(file="assets/question.png")
 
