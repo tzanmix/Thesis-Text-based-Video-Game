@@ -5,7 +5,8 @@ try:
 except subprocess.CalledProcessError:
     print("Αποτυχία. Ελέγξτε αν το pip είναι εγκαταστημένο.")
 
+#####
 import nltk
 nltk.download("stopwords")
 nltk.download("punkt")
-nltk.download("averaged_perceptron_tagger")
+nltk.download("averaged_perceptron_tagger") 
